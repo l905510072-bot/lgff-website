@@ -1,5 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;600;700&display=swap');
+
+/* Design Philosophy: Cinematic Minimalism with Spiritual Depth
+   - Color: Deep red (#C41E3A) + Pure white + Deep charcoal
+   - Typography: Playfair Display (serif) + Lato (sans-serif)
+   - Mood: Cinematic, spiritual, hopeful, professional
+   - Inspiration: International film festivals + Christian symbolism
+*/
 
 @custom-variant dark (&:is(.dark *));
 
@@ -43,83 +51,106 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  /* LGFF Custom Colors - Cinematic & Spiritual */
+  --lgff-red: #C41E3A;           /* Deep red - lighthouse beam, faith */
+  --lgff-white: #FFFFFF;         /* Pure white - truth, light */
+  --lgff-dark: #0F0F0F;          /* Deep black - cinema, night */
+  --lgff-charcoal: #1A1A1A;      /* Charcoal - depth, foundation */
+  --lgff-gold: #F5E6D3;          /* Warm gold - lighthouse warmth */
+  --lgff-light-gray: #E8E8E8;    /* Light gray - subtle contrast */
+  --lgff-text-light: #F0F0F0;    /* Light text - high contrast */
+  
+  --primary: var(--lgff-red);
+  --primary-foreground: var(--lgff-white);
+  --sidebar-primary: var(--lgff-red);
+  --sidebar-primary-foreground: var(--lgff-white);
+  --chart-1: #FF6B6B;
+  --chart-2: var(--lgff-red);
+  --chart-3: #8B1E2E;
+  --chart-4: #5C1520;
+  --chart-5: #2D0A10;
+  --radius: 0.25rem;  /* Minimal rounding - sharp, cinematic */
+  
+  /* Dark theme for cinematic feel */
+  --background: oklch(0.08 0 0);      /* Deep black */
+  --foreground: oklch(0.95 0 0);      /* Near white */
+  --card: oklch(0.12 0 0);            /* Dark charcoal */
+  --card-foreground: oklch(0.95 0 0); /* Light text */
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --secondary: oklch(0.15 0.05 0);    /* Dark red tint */
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.25 0 0);           /* Muted dark */
+  --muted-foreground: oklch(0.7 0 0); /* Muted light */
+  --accent: var(--lgff-red);          /* Red accent */
+  --accent-foreground: var(--lgff-white);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --border: oklch(0.2 0 0);           /* Dark border */
+  --input: oklch(0.15 0 0);           /* Dark input */
+  --ring: var(--lgff-red);            /* Red focus ring */
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-accent: var(--lgff-red);
+  --sidebar-accent-foreground: var(--lgff-white);
+  --sidebar-border: oklch(0.2 0 0);
+  --sidebar-ring: var(--lgff-red);
 }
 
+/* Dark theme is default for LGFF - cinematic feel */
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  /* Already set as default above */
 }
 
 @layer base {
+  html {
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  h1 { font-size: 3.5rem; line-height: 1.1; }
+  h2 { font-size: 2.5rem; line-height: 1.2; }
+  h3 { font-size: 1.75rem; line-height: 1.3; }
+  
+  @media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+  }
+  
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
     @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
   }
+  
+  /* Smooth transitions for interactive elements */
+  button, a, input, select, textarea {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Film grain effect for authenticity */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" seed="2"/><feColorMatrix in="noise" type="saturate" values="0.3"/></filter><rect width="100" height="100" fill="%23ffffff" opacity="0.03" filter="url(%23noise)"/></svg>');
+    z-index: -1;
+  }
+  
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -131,27 +162,103 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+  
+  /* LGFF Button Styling */
+  button:not(:disabled):hover {
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.5);
+  }
+  
+  /* LGFF Link Styling */
+  a {
+    @apply text-accent hover:text-accent/80;
+  }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
+  /* LGFF Cinematic Sections */
+  .lgff-section {
+    @apply relative w-full py-20 px-4 md:py-32 md:px-8;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lgff-section-dark {
+    @apply bg-gradient-to-b from-[#0F0F0F] to-[#1A1A1A];
+  }
+  
+  .lgff-section-overlay {
+    @apply absolute inset-0 bg-black/40 z-0;
+  }
+  
+  .lgff-content {
+    @apply relative z-10 max-w-5xl mx-auto w-full;
+  }
+  
+  /* LGFF Typography */
+  .lgff-title {
+    @apply font-serif text-white text-4xl md:text-6xl font-bold leading-tight;
+    letter-spacing: -1px;
+  }
+  
+  .lgff-subtitle {
+    @apply text-lg md:text-xl text-gray-300 mt-4 font-light;
+  }
+  
+  .lgff-tagline {
+    @apply text-accent font-serif text-2xl md:text-3xl mt-6 italic;
+  }
+  
+  /* LGFF Buttons */
+  .lgff-btn {
+    @apply px-8 py-3 md:px-10 md:py-4 bg-accent text-white font-semibold rounded-sm;
+    @apply hover:bg-red-700 hover:shadow-lg hover:shadow-red-500/50;
+    @apply transition-all duration-300;
+  }
+  
+  .lgff-btn-outline {
+    @apply px-8 py-3 md:px-10 md:py-4 border-2 border-accent text-accent font-semibold rounded-sm;
+    @apply hover:bg-accent hover:text-white;
+    @apply transition-all duration-300;
+  }
+  
+  /* LGFF Cards */
+  .lgff-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 md:p-8;
+    @apply hover:bg-white/10 hover:border-accent/50;
+    @apply transition-all duration-300;
+  }
+  
+  /* LGFF Divider */
+  .lgff-divider {
+    @apply h-1 bg-gradient-to-r from-transparent via-accent to-transparent my-8 md:my-12;
+  }
+  
+  /* Film Strip Pattern */
+  .film-strip {
+    position: relative;
+    background: repeating-linear-gradient(
+      90deg,
+      #1A1A1A 0px,
+      #1A1A1A 20px,
+      #000 20px,
+      #000 24px
+    );
+  }
+  
+  /* Lighthouse Glow Effect */
+  .lighthouse-glow {
+    @apply relative;
+    box-shadow: 0 0 40px rgba(196, 30, 58, 0.3), inset 0 0 40px rgba(196, 30, 58, 0.1);
+  }
+  
+  /* Container utility */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +269,70 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
+  
+  /* Additional LGFF utilities */
+  .text-accent-glow {
+    @apply text-accent drop-shadow-lg;
+    text-shadow: 0 0 10px rgba(196, 30, 58, 0.5);
+  }
+  
+  .bg-dark-overlay {
+    @apply bg-black/40;
+  }
+}
+
+/* Scroll Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Light Beam Animation */
+@keyframes lightBeam {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-light-beam {
+  animation: lightBeam 3s ease-in-out infinite;
+}
+
+/* Glow Pulse */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(196, 30, 58, 0.6);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
 }
