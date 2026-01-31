@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Film, Globe, Users, Calendar, Award } from "lucide-react";
+import { ArrowRight, Film, Globe, Users, Calendar, Award, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 /**
@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,14 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [showModal]);
+
   return (
     <div className="w-full bg-gradient-to-b from-[#0F0F0F] to-[#1A1A1A] text-white overflow-x-hidden">
       {/* Scroll Progress Indicator */}
@@ -38,6 +47,135 @@ export default function Home() {
         className="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#C41E3A] to-[#FF6B6B] z-50 transition-all duration-300"
         style={{ width: `${scrollProgress}%` }}
       />
+
+      {/* Festival Details Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/80 z-40 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-[#1A1A1A] border border-[#C41E3A]/30 rounded-sm max-w-4xl w-full my-8 relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded transition-colors z-10"
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+
+            {/* Modal Content */}
+            <div className="p-8 md:p-12 max-h-[80vh] overflow-y-auto">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8">
+                Lighthouse Gospel Film Festival
+              </h2>
+              <p className="text-xl text-[#C41E3A] font-serif mb-8">
+                燈塔福音影展｜全球基督徒學生劇情長片徵件公告（2026）
+              </p>
+
+              {/* Section 1: Festival Position */}
+              <div className="mb-8 space-y-4">
+                <h3 className="text-2xl font-serif font-bold text-white">一、影展定位</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong>燈塔福音影展（Lighthouse Gospel Film Festival, LGFF）</strong>由臺北基督學院發起，聚焦全球基督徒學生的福音影像創作。本影展致力於鼓勵青年以劇情敘事呈現信仰、盼望、救贖與生命更新的故事，並透過作品交流與策展實踐，培育新世代以影像作見證的創作者。
+                </p>
+                <p className="text-gray-300 leading-relaxed italic">
+                  Lighthouse Gospel Film Festival (LGFF), initiated by Taipei Christian College, is a global platform dedicated to gospel-centered narrative feature films created by Christian student filmmakers. We invite stories of faith, hope, redemption, and transformation, and seek to cultivate the next generation of storytellers who bear witness through cinema.
+                </p>
+              </div>
+
+              {/* Section 2: Submission Categories */}
+              <div className="mb-8 space-y-4">
+                <h3 className="text-2xl font-serif font-bold text-white">二、徵件類別（本屆限定）</h3>
+                <p className="text-gray-300">
+                  <strong>劇情片／劇情長片</strong>（Narrative Feature Film / Fiction）
+                </p>
+                <ul className="text-gray-300 space-y-2 ml-4">
+                  <li>• 本屆僅徵選劇情片</li>
+                  <li>• 片長規範：20–90 分鐘</li>
+                  <li>• 本屆不收：紀錄片、動畫、MV、實驗片</li>
+                </ul>
+              </div>
+
+              {/* Section 3: Eligibility */}
+              <div className="mb-8 space-y-4">
+                <h3 className="text-2xl font-serif font-bold text-white">三、參賽資格（本屆限定）</h3>
+                <div>
+                  <p className="text-white font-semibold mb-2">中文</p>
+                  <ul className="text-gray-300 space-y-2 ml-4">
+                    <li>• 限學生身分參賽：報名者須為在學學生（大學、研究所、神學院或同等教育／訓練機構皆可）。</li>
+                    <li>• 可個人或團隊報名；若為團隊，導演或主要創作者須具學生身分。</li>
+                    <li>• 參賽者需可提供有效學生身分證明（學生證、在學證明或註冊證明等）。</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Section 4: Themes */}
+              <div className="mb-8 space-y-4">
+                <h3 className="text-2xl font-serif font-bold text-white">四、作品主題方向（建議但不設限）</h3>
+                <p className="text-gray-300 mb-3">本影展鼓勵作品以福音為核心，呈現以下方向之一或多項：</p>
+                <ul className="text-gray-300 space-y-2 ml-4">
+                  <li>• 信仰敘事、生命見證、呼召與回應</li>
+                  <li>• 盼望、赦免、重建、愛與真理</li>
+                  <li>• 青年信仰處境、關係修復、傷痛與醫治</li>
+                  <li>• 以基督信仰價值回應世界議題（家庭、正義、饒恕、良善、誠實等）</li>
+                </ul>
+              </div>
+
+              {/* Section 5: Subtitles */}
+              <div className="mb-8 space-y-4">
+                <h3 className="text-2xl font-serif font-bold text-white">五、字幕規則（重要）</h3>
+                <p className="text-gray-300">
+                  <strong>參賽作品須提供英文字幕（English Subtitles Required）。</strong>
+                </p>
+                <p className="text-gray-300">
+                  若原片語言非英文，請提供可清楚閱讀之英文字幕檔（建議 SRT 格式）或內嵌字幕版本。
+                </p>
+              </div>
+
+              {/* Section 6: Judging Criteria */}
+              <div className="mb-8 space-y-4">
+                <h3 className="text-2xl font-serif font-bold text-white">六、評選重點（評審標準）</h3>
+                <ul className="text-gray-300 space-y-2 ml-4">
+                  <li>• 福音核心與價值清晰度</li>
+                  <li>• 劇情敘事完整性與角色塑造</li>
+                  <li>• 主題深度與情感真實性</li>
+                  <li>• 影像語言與整體完成度</li>
+                  <li>• 創意與表達風格</li>
+                </ul>
+              </div>
+
+              {/* Section 7: Deadline */}
+              <div className="mb-8 space-y-4">
+                <h3 className="text-2xl font-serif font-bold text-white">七、徵件截止日期（重要）</h3>
+                <p className="text-[#C41E3A] font-bold text-lg">
+                  收件截止：3/31（23:59，GMT+8）
+                </p>
+                <p className="text-gray-300 italic">
+                  Submission Deadline: March 31 (23:59, GMT+8)
+                </p>
+              </div>
+
+              {/* Section 8: Copyright */}
+              <div className="mb-8 space-y-4">
+                <h3 className="text-2xl font-serif font-bold text-white">八、著作權與授權聲明</h3>
+                <p className="text-gray-300 mb-3">
+                  參賽者須保證作品為原創或已取得合法授權（含音樂、影像素材、劇本改編等）。
+                </p>
+                <p className="text-gray-300">
+                  參賽者同意主辦單位得於影展推廣、徵件宣傳、入圍公告與成果展示之範圍內，使用作品之片名、劇照、海報、預告片與片段（非商業用途），並註明創作者資訊。
+                </p>
+              </div>
+
+              {/* Section 9: Organizer */}
+              <div className="mb-8 space-y-4 border-t border-white/10 pt-8">
+                <h3 className="text-2xl font-serif font-bold text-white">九、主辦單位</h3>
+                <div className="space-y-2 text-gray-300">
+                  <p><strong>主辦：</strong>臺北基督學院 Taipei Christian College</p>
+                  <p><strong>影展名稱：</strong>Lighthouse Gospel Film Festival (LGFF)｜燈塔福音影展</p>
+                  <p><strong>報名費：</strong>免費（Free）</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ===== SECTION 1: HERO - FESTIVAL IDENTIFICATION ===== */}
       <section className="lgff-section min-h-screen relative overflow-hidden">
@@ -92,7 +230,10 @@ export default function Home() {
           </div>
 
           {/* CTA Button */}
-          <button className="lgff-btn inline-flex items-center gap-2 group">
+          <button
+            onClick={() => setShowModal(true)}
+            className="lgff-btn inline-flex items-center gap-2 group"
+          >
             Explore the Festival
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
