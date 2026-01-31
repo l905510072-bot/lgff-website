@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Film, Globe, Users, Calendar, Award, X } from "lucide-react";
+import { ArrowRight, Film, Globe, Users, Calendar, Award, X, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
 /**
@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [showSubmitMenu, setShowSubmitMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +40,21 @@ export default function Home() {
       document.body.style.overflow = 'unset';
     }
   }, [showModal]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('[data-submit-menu]')) {
+        setShowSubmitMenu(false);
+      }
+    };
+
+    if (showSubmitMenu) {
+      document.addEventListener('click', handleClickOutside);
+    }
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [showSubmitMenu]);
 
   return (
     <div className="w-full bg-gradient-to-b from-[#0F0F0F] to-[#1A1A1A] text-white overflow-x-hidden">
@@ -527,11 +543,42 @@ export default function Home() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex justify-center">
-            <button className="lgff-btn group inline-flex items-center gap-2">
-              Submit Your Film
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+          <div className="flex justify-center relative" data-submit-menu>
+            <div className="relative inline-block">
+              <button
+                onClick={() => setShowSubmitMenu(!showSubmitMenu)}
+                className="lgff-btn group inline-flex items-center gap-2"
+              >
+                Submit Your Film
+                <ChevronDown className="w-5 h-5 transition-transform" style={{ transform: showSubmitMenu ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+              </button>
+
+              {/* Dropdown Menu */}
+              {showSubmitMenu && (
+                <div className="absolute top-full mt-3 left-1/2 transform -translate-x-1/2 bg-[#1A1A1A] border border-[#C41E3A]/50 rounded-sm shadow-2xl z-10 min-w-max overflow-hidden">
+                  <button
+                    onClick={() => {
+                      setShowSubmitMenu(false);
+                      // Handle YouTube/Vimeo submission
+                    }}
+                    className="w-full text-left px-6 py-4 text-gray-200 hover:bg-[#C41E3A]/20 hover:text-white transition-colors border-b border-[#C41E3A]/20"
+                  >
+                    <div className="font-semibold">YouTube/Vimeo 私密鏈接</div>
+                    <div className="text-xs text-gray-400 mt-1">上傳至影片平台並提供私密連結</div>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowSubmitMenu(false);
+                      // Handle Google Drive submission
+                    }}
+                    className="w-full text-left px-6 py-4 text-gray-200 hover:bg-[#C41E3A]/20 hover:text-white transition-colors"
+                  >
+                    <div className="font-semibold">Google Drive 鏈接</div>
+                    <div className="text-xs text-gray-400 mt-1">上傳至 Google Drive 並分享連結</div>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Footer Note */}
