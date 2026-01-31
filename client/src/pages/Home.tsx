@@ -386,14 +386,9 @@ export default function Home() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+          <div className="flex justify-center">
             <button className="lgff-btn group inline-flex items-center gap-2">
               Submit Your Film
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-
-            <button className="lgff-btn-outline inline-flex items-center gap-2">
-              Join the Call
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
