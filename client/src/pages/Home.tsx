@@ -143,7 +143,7 @@ export default function Home() {
 
               {/* Section 7: Deadline */}
               <div className="mb-8 space-y-4">
-                <h3 className="text-2xl font-serif font-bold text-white">七、徵件截止日期（重要）</h3>
+                <h3 className="text-2xl font-serif font-bold text-white">七、徵件截止日期</h3>
                 <p className="text-[#C41E3A] font-bold text-lg">
                   收件截止：3/31（23:59，GMT+8）
                 </p>
