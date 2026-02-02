@@ -584,7 +584,7 @@ export default function Home() {
           {/* Footer Note */}
           <div className="mt-16 pt-8 border-t border-white/10">
             <p className="text-gray-400 text-sm md:text-base">
-              © 2026 Lighthouse Gospel Film Festival. All rights reserved.
+              © 2026 Lighthouse  Film Festival. All rights reserved.
             </p>
             <p className="text-gray-500 text-xs md:text-sm mt-2">
               Initiated by Christ's College Taipei| 由臺北基督學院發起
