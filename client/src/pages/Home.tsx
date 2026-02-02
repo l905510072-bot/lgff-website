@@ -89,7 +89,7 @@ export default function Home() {
               <div className="mb-8 space-y-4">
                 <h3 className="text-2xl font-serif font-bold text-white">一、影展定位</h3>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong>燈塔福音影展（Lighthouse Gospel Film Festival, LGFF）</strong>由臺北基督學院發起，聚焦全球基督徒學生的福音影像創作。本影展致力於鼓勵青年以劇情敘事呈現信仰、盼望、救贖與生命更新的故事，並透過作品交流與策展實踐，培育新世代以影像作見證的創作者。
+                  <strong>燈塔影展（Lighthouse Gospel Film Festival, LFF）</strong>由臺北基督學院發起，聚焦全球基督徒學生的福音影像創作。本影展致力於鼓勵青年以劇情敘事呈現信仰、盼望、救贖與生命更新的故事，並透過作品交流與策展實踐，培育新世代以影像作見證的創作者。
                 </p>
                 <p className="text-gray-300 leading-relaxed italic">
                   Lighthouse Film Festival (LFF), initiated by Christ's College Taipei, is a global platform dedicated to gospel-centered narrative feature films created by Christian student filmmakers. We invite stories of faith, hope, redemption, and transformation, and seek to cultivate the next generation of storytellers who bear witness through cinema.
