@@ -509,7 +509,7 @@ export default function Home() {
                 <strong className="text-white">影展名稱：</strong>
               </p>
               <p className="text-lg md:text-xl font-serif">
-                Lighthouse Gospel Film Festival (LGFF)
+                Lighthouse Film Festival (LFF)
               </p>
             </div>
           </div>
