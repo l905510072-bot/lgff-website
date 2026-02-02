@@ -220,7 +220,7 @@ export default function Home() {
 
           {/* Main Title */}
           <h1 className="lgff-title text-5xl md:text-7xl font-serif font-bold mb-6">
-            Lighthouse Gospel
+            Lighthouse
             <br />
             Film Festival
           </h1>
