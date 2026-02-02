@@ -183,8 +183,8 @@ export default function Home() {
               <div className="mb-8 space-y-4 border-t border-white/10 pt-8">
                 <h3 className="text-2xl font-serif font-bold text-white">九、主辦單位</h3>
                 <div className="space-y-2 text-gray-300">
-                  <p><strong>主辦：</strong>臺北基督學院 Taipei Christian College</p>
-                  <p><strong>影展名稱：</strong>Lighthouse Gospel Film Festival (LGFF)｜燈塔福音影展</p>
+                  <p><strong>主辦：</strong>臺北基督學院 Christ's College Taipei</p>
+                  <p><strong>影展名稱：</strong>Lighthouse Film Festival (LFF)｜燈塔影展</p>
                   <p><strong>報名費：</strong>免費（Free）</p>
                 </div>
               </div>
