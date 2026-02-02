@@ -228,7 +228,7 @@ export default function Home() {
           {/* Subtitle */}
           <div className="space-y-3 mb-8">
             <p className="text-xl md:text-2xl font-light text-gray-200">
-              燈塔福音影展
+              燈塔影展
             </p>
             <p className="text-lg md:text-xl text-gray-400">
               Global Christian Student Film Festival
@@ -326,7 +326,7 @@ export default function Home() {
                 中文
               </h3>
               <p className="text-base md:text-lg leading-relaxed text-gray-200 font-light">
-                燈塔福音影展（Lighthouse Gospel Film Festival, LGFF）由臺北基督學院發起，聚焦全球基督徒學生的劇情影像創作，鼓勵青年以電影敘事回應信仰、盼望、救贖與生命更新。
+                燈塔影展（Lighthouse  Film Festival, LFF）由臺北基督學院發起，聚焦全球基督徒學生的劇情影像創作，鼓勵青年以電影敘事回應信仰、盼望、救贖與生命更新。
               </p>
             </div>
 
@@ -336,7 +336,7 @@ export default function Home() {
                 English
               </h3>
               <p className="text-base md:text-lg leading-relaxed text-gray-200 font-light">
-                Lighthouse Gospel Film Festival (LGFF), initiated by Taipei Christian College, is a global platform for gospel-centered narrative films by Christian students, cultivating a new generation of storytellers who bear witness through cinema.
+                Lighthouse Film Festival (LFF), initiated by Christ's College Taipei , is a global platform for gospel-centered narrative films by Christian students, cultivating a new generation of storytellers who bear witness through cinema.
               </p>
             </div>
           </div>
@@ -500,7 +500,7 @@ export default function Home() {
                 臺北基督學院
               </h3>
               <p className="text-xl md:text-2xl text-gray-300 font-light">
-                Taipei Christian College
+                Christ's College Taipei
               </p>
             </div>
 
@@ -587,7 +587,7 @@ export default function Home() {
               © 2026 Lighthouse Gospel Film Festival. All rights reserved.
             </p>
             <p className="text-gray-500 text-xs md:text-sm mt-2">
-              Initiated by Taipei Christian College | 由臺北基督學院發起
+              Initiated by Christ's College Taipei| 由臺北基督學院發起
             </p>
           </div>
         </div>
